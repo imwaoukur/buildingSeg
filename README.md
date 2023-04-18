@@ -1,12 +1,10 @@
 # buildingSeg
 the top space of Building Computation-backend
 
-##
-Django + pytorch
+## Use Django + pytorch
 
-###Installation
-- you need download torch
+### Installation
 - pip install -r requirements.txt
 
-###Run Project
+### Run Project
 - python manager.py runserver
