@@ -52,9 +52,17 @@ def pixel_count(request):
             file_path = temp_file.name
             # print("temp_file_name: ", temp_file.name)
         count = predict_img(file_path, resolution)
+        ABS_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+        pre_img_path = os.path.join(ABS_ROOT, 'segProgram/local/pre_img.png')
+        with open(pre_img_path, 'rb') as f:
+            pre_img_data = base64.b64encode(f.read()).decode()
+
         # 构造响应数据
-        response_data = {'count': count}
-        print('response_data:', response_data)
+        response_data = {
+            'count': count,
+            'pre_img': pre_img_data
+        }
+        # print('response_data:', response_data)
         response = HttpResponse(json.dumps(response_data))
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
