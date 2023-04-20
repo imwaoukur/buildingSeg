@@ -76,7 +76,7 @@ def predict_img(img_path, resolution):
         space = count / 28.0 * resolution
 
         end_time = time.time()
-        print("代码运行时间：", (end_time-start_time) * 1000, "ms") 
+        # print("代码运行时间：", (end_time-start_time) * 1000, "ms")
         # print("count: ", count)
         img_bgr = cv2.cvtColor(np.asarray(original_img), cv2.COLOR_RGB2BGR)
         contours, im = cv2.findContours(prediction, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # 第一个参数是轮廓

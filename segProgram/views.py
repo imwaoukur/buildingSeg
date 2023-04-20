@@ -62,7 +62,7 @@ def pixel_count(request):
             'count': count,
             'pre_img': pre_img_data
         }
-        # print('response_data:', response_data)
+        #  print('response_data:', response_data)
         response = HttpResponse(json.dumps(response_data))
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
